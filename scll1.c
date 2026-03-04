@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//Creating a Node Structure
 struct node
 {
     int data;
@@ -10,12 +10,13 @@ struct node
 struct node *start = NULL;
 void printll();
 
+//Insertion of new node in the beginning of the linked list 
 void ins_beg()
 {
     struct node *new_node = malloc(sizeof(struct node));
     printf("Enter the data of newnode\n");
     scanf("%d", &new_node->data);
-    if (start == NULL)
+    if (start == NULL) // checking if the list is empty
     {
         start = new_node;
         new_node->next = start;
@@ -34,6 +35,7 @@ void ins_beg()
     printll();
 }
 
+//Insertion of new node before the specified node with specified value
 void ins_bef()
 {
     struct node *new_node = malloc(sizeof(struct node));
@@ -62,6 +64,7 @@ void ins_bef()
     printll();
 }
 
+//Insertion of new node after the specified node with specified value
 void ins_aft()
 {
     struct node *new_node = malloc(sizeof(struct node));
@@ -82,6 +85,7 @@ void ins_aft()
     printll();
 }
 
+//Insertion of new node at the end of the linked list 
 void ins_end()
 {
     struct node *new_node = malloc(sizeof(struct node));
@@ -98,6 +102,7 @@ void ins_end()
     printll();
 }
 
+//Deleting the node from the beginning of the linked list 
 void del_beg()
 {
     struct node *ptr;
@@ -117,6 +122,8 @@ void del_beg()
     free(temp);
     printll();
 }
+
+//Deleting the node of specified value 
 
 void del_mid()
 {
@@ -144,6 +151,7 @@ void del_mid()
     printll();
 }
 
+//Deleting the node from the end of the linked list 
 void del_end()
 {
     struct node *ptr, *preptr;
@@ -183,6 +191,7 @@ void printll()
 int main()
 {
     int opt;
+    //Loop for performing different operations continuosly until you user wish to exit
     while (opt != 9)
     {
         printf("---------Operations on Linked list---------\n");
@@ -198,7 +207,8 @@ int main()
 
         printf("Select the operation to be performed\n");
         scanf("%d", &opt);
-
+        
+        //switch case  for selecting the operation to be performed 
         switch (opt)
         {
         case 1:
