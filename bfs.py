@@ -1,10 +1,11 @@
+#BFS - Breadth first search
 class Node:
     def __init__(self, value):
         self.value = value      # Store node value
         self.children = []      # List to store child nodes
 
-
 from collections import deque
+#main function for bfs
 def bfs(root):
     if not root:
         return                  # Exit if tree is empty
